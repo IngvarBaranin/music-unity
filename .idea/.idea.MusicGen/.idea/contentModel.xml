@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\PC\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\PC\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_MusicGen.39603087.00" t="ExcludeRecursive" />
+    <e p="C:\Users\PC\Desktop\Unity projects\MusicGen" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="MidiPlayer" t="Include">
+          <e p="Demo" t="Include">
+            <e p="Builder" t="Include">
+              <e p="IMPORTANT  NOTICE.txt" t="Include" />
+            </e>
+            <e p="FreeDemos" t="Include">
+              <e p="Material" t="Include">
+                <e p="Cold Night" t="Include">
+                  <e p="Extract From AllSkyFree_Readme.txt" t="Include" />
+                </e>
+              </e>
+              <e p="Script" t="Include">
+                <e p="CreateSample.cs" t="Include" />
+                <e p="ExtendedFlycam.cs" t="Include" />
+                <e p="ExternalComponents" t="Include">
+                  <e p="FlyingCamera.cs" t="Include" />
+                  <e p="iTween.cs" t="Include" />
+                </e>
+                <e p="FlyCamera.cs" t="Include" />
+                <e p="FlyOrMoveController.cs" t="Include" />
+                <e p="GUISelectSoundFont.cs" t="Include" />
+                <e p="HelperDemo.cs" t="Include" />
+                <e p="MainMenu.cs" t="Include" />
+                <e p="MoveObject.cs" t="Include" />
+                <e p="RotateObject.cs" t="Include" />
+                <e p="SceneHandler.cs" t="Include" />
+                <e p="TestMidiFileLoad.cs" t="Include" />
+                <e p="TestMidiFilePlayerMulti" t="Include">
+                  <e p="LookPoint.cs" t="Include" />
+                  <e p="LookTarget.cs" t="Include" />
+                  <e p="MovePoint.cs" t="Include" />
+                  <e p="SavWav.cs" t="Include" />
+                </e>
+                <e p="TestMidiFilePlayerScripting.cs" t="Include" />
+                <e p="TestMidiStream.cs" t="Include" />
+              </e>
+              <e p="SourceCatchMusic" t="Include">
+                <e p="Script" t="Include">
+                  <e p="Collide.cs" t="Include" />
+                  <e p="ControlView.cs" t="Include" />
+                  <e p="MusicView.cs" t="Include" />
+                  <e p="NoteView.cs" t="Include" />
+                </e>
+              </e>
+            </e>
+            <e p="Water" t="Include">
+              <e p="Water" t="Include">
+                <e p="Scripts" t="Include">
+                  <e p="Displace.cs" t="Include" />
+                  <e p="GerstnerDisplace.cs" t="Include" />
+                  <e p="MeshContainer.cs" t="Include" />
+                  <e p="PlanarReflection.cs" t="Include" />
+                  <e p="SpecularLighting.cs" t="Include" />
+                  <e p="Water.cs" t="Include" />
+                  <e p="WaterBase.cs" t="Include" />
+                  <e p="WaterTile.cs" t="Include" />
+                </e>
+                <e p="Shaders" t="Include">
+                  <e p="FXWaterPro.shader" t="Include" />
+                </e>
+              </e>
+              <e p="Water4" t="Include">
+                <e p="Shaders" t="Include">
+                  <e p="FXWater4Advanced.shader" t="Include" />
+                  <e p="FXWater4Simple.shader" t="Include" />
+                  <e p="WaterInclude.cginc" t="Include" />
+                </e>
+              </e>
+            </e>
+          </e>
+          <e p="Resources" t="Include">
+            <e p="MidiSet.txt" t="Include" />
+            <e p="SoundfontsDB" t="Include">
+              <e p="GeneralUser_GS_SoftSynth_v144" t="Include">
+                <e p="GeneralUser_GS_SoftSynth_v144.txt" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="Editor" t="Include">
+              <e p="AboutMPTK.cs" t="Include" />
+              <e p="GetFullVersion.cs" t="Include" />
+              <e p="MenuShortcut.cs" t="Include" />
+              <e p="MessagesEditor.cs" t="Include" />
+              <e p="MidiCommonEditor.cs" t="Include" />
+              <e p="MidiFileLoaderEditor.cs" t="Include" />
+              <e p="MidiFilePlayerEditor.cs" t="Include" />
+              <e p="MidiFileSetupWindow.cs" t="Include" />
+              <e p="MidiStreamPlayerEditor.cs" t="Include" />
+              <e p="NoErrorValidation.cs" t="Include" />
+              <e p="PopupListPatchs.cs" t="Include" />
+              <e p="ScreenLoggerEditor" t="Include">
+                <e p="ScreenLoggerEditor.cs" t="Include" />
+              </e>
+              <e p="SelectMidiWindow.cs" t="Include" />
+              <e p="SoundFontSetupWindow.cs" t="Include" />
+              <e p="StopPlayingOnRecompile.cs" t="Include" />
+              <e p="TextArea.cs" t="Include" />
+              <e p="ToolsEditor.cs" t="Include" />
+            </e>
+            <e p="FluidSynth" t="Include">
+              <e p="_fluidsynth_LICENSE.txt" t="Include" />
+              <e p="_fluisynth_AUTHORS.txt" t="Include" />
+              <e p="fluid_channel.cs" t="Include" />
+              <e p="fluid_chorus.cs" t="Include" />
+              <e p="fluid_conv.cs" t="Include" />
+              <e p="fluid_dsp_float.cs" t="Include" />
+              <e p="fluid_env_data.cs" t="Include" />
+              <e p="fluid_gen_info.cs" t="Include" />
+              <e p="fluid_global.cs" t="Include" />
+              <e p="fluid_iir_filter.cs" t="Include" />
+              <e p="fluid_midi.cs" t="Include" />
+              <e p="fluid_rev_v1.cs" t="Include" />
+              <e p="fluid_rev_v2.cs" t="Include" />
+              <e p="fluid_tuning.cs" t="Include" />
+              <e p="fluid_voice.cs" t="Include" />
+            </e>
+            <e p="MPTKGameObject" t="Include">
+              <e p="MidiFileLoader.cs" t="Include" />
+              <e p="MidiFilePlayer.cs" t="Include" />
+              <e p="MidiPlayerGlobal.cs" t="Include" />
+              <e p="MidiStreamPlayer.cs" t="Include" />
+              <e p="MidiSynth.cs" t="Include" />
+              <e p="MPTKEvent.cs" t="Include" />
+              <e p="MPTKListItem.cs" t="Include" />
+              <e p="ToolsUnityEvent.cs" t="Include" />
+            </e>
+            <e p="MPTKMidi" t="Include">
+              <e p="MidiLoad.cs" t="Include" />
+              <e p="MidiScan.cs" t="Include" />
+              <e p="MidiSet.cs" t="Include" />
+              <e p="SoundFontInfo.cs" t="Include" />
+              <e p="TrackMidiEvent.cs" t="Include" />
+            </e>
+            <e p="MPTKSoundFont" t="Include">
+              <e p="HiGen.cs" t="Include" />
+              <e p="HiInstrument.cs" t="Include" />
+              <e p="HiMod.cs" t="Include" />
+              <e p="HiPreset.cs" t="Include" />
+              <e p="HiSample.cs" t="Include" />
+              <e p="HiZone.cs" t="Include" />
+              <e p="ImBank.cs" t="Include" />
+              <e p="ImSoundFont.cs" t="Include" />
+              <e p="SFFile.cs" t="Include" />
+              <e p="SFLoad.cs" t="Include" />
+              <e p="VoiceAudioSource.cs" t="Include" />
+            </e>
+            <e p="MPTKUtil" t="Include">
+              <e p="BuilderInfo.cs" t="Include" />
+              <e p="CustomStyle.cs" t="Include" />
+              <e p="DicAudioClip.cs" t="Include" />
+              <e p="DicAudioWave.cs" t="Include" />
+              <e p="HelperNote.cs" t="Include" />
+              <e p="MathUtil.cs" t="Include" />
+              <e p="ObjectUtilities.cs" t="Include" />
+              <e p="PopupListItem.cs" t="Include" />
+              <e p="Routine.cs" t="Include" />
+            </e>
+            <e p="NAudio" t="Include">
+              <e p="_NAudio_License.txt" t="Include" />
+              <e p="ByteEncoding.cs" t="Include" />
+              <e p="ChannelAfterTouchEvent.cs" t="Include" />
+              <e p="ControlChangeEvent.cs" t="Include" />
+              <e p="KeySignatureEvent.cs" t="Include" />
+              <e p="MergeSort.cs" t="Include" />
+              <e p="MetaEvent.cs" t="Include" />
+              <e p="MetaEventType.cs" t="Include" />
+              <e p="MidiCommandCode.cs" t="Include" />
+              <e p="MidiController.cs" t="Include" />
+              <e p="MidiEvent.cs" t="Include" />
+              <e p="MidiEventCollection.cs" t="Include" />
+              <e p="MidiEventComparer.cs" t="Include" />
+              <e p="MidiFile.cs" t="Include" />
+              <e p="MidiInMessageEventArgs.cs" t="Include" />
+              <e p="MidiMessage.cs" t="Include" />
+              <e p="NoteEvent.cs" t="Include" />
+              <e p="NoteOnEvent.cs" t="Include" />
+              <e p="PatchChangeEvent.cs" t="Include" />
+              <e p="PitchWheelChangeEvent.cs" t="Include" />
+              <e p="RawMetaEvent.cs" t="Include" />
+              <e p="SequencerSpecificEvent.cs" t="Include" />
+              <e p="SmpteOffsetEvent.cs" t="Include" />
+              <e p="SysexEvent.cs" t="Include" />
+              <e p="TempoEvent.cs" t="Include" />
+              <e p="TextEvent.cs" t="Include" />
+              <e p="TimeSignatureEvent.cs" t="Include" />
+              <e p="TrackSequenceNumberEvent.cs" t="Include" />
+            </e>
+            <e p="ScreenLogger" t="Include">
+              <e p="_ScreenLogger_License.txt" t="Include" />
+              <e p="Readme.txt" t="Include" />
+              <e p="ScreenLogger.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Third-Party Notices.txt" t="Include" />
+          <e p="TutorialInfo" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="Editor" t="Include">
+                <e p="ReadmeEditor.cs" t="Include" />
+              </e>
+              <e p="Readme.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Version changes full.txt" t="Include" />
+          <e p="Version changes.txt" t="Include" />
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="MidiNotes.cs" t="Include" />
+          <e p="PythonTest.cs" t="Include" />
+          <e p="UdpSocket.cs" t="Include" />
+        </e>
+        <e p="TextMesh Pro" t="Include">
+          <e p="Fonts" t="Include">
+            <e p="LiberationSans - OFL.txt" t="Include" />
+          </e>
+          <e p="Resources" t="Include">
+            <e p="LineBreaking Following Characters.txt" t="Include" />
+            <e p="LineBreaking Leading Characters.txt" t="Include" />
+          </e>
+          <e p="Shaders" t="Include">
+            <e p="TMP_Bitmap-Custom-Atlas.shader" t="Include" />
+            <e p="TMP_Bitmap-Mobile.shader" t="Include" />
+            <e p="TMP_Bitmap.shader" t="Include" />
+            <e p="TMP_SDF Overlay.shader" t="Include" />
+            <e p="TMP_SDF SSD.shader" t="Include" />
+            <e p="TMP_SDF-Mobile Masking.shader" t="Include" />
+            <e p="TMP_SDF-Mobile Overlay.shader" t="Include" />
+            <e p="TMP_SDF-Mobile SSD.shader" t="Include" />
+            <e p="TMP_SDF-Mobile.shader" t="Include" />
+            <e p="TMP_SDF-Surface-Mobile.shader" t="Include" />
+            <e p="TMP_SDF-Surface.shader" t="Include" />
+            <e p="TMP_SDF.shader" t="Include" />
+            <e p="TMP_Sprite.shader" t="Include" />
+            <e p="TMPro.cginc" t="Include" />
+            <e p="TMPro_Mobile.cginc" t="Include" />
+            <e p="TMPro_Properties.cginc" t="Include" />
+            <e p="TMPro_Surface.cginc" t="Include" />
+          </e>
+          <e p="Sprites" t="Include">
+            <e p="EmojiOne Attribution.txt" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="MusicGen.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
