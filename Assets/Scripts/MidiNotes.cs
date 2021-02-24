@@ -16,14 +16,12 @@ public class MidiNotes : MonoBehaviour
     private long milliSecondsDifferenceBetweenEndAndStart = 0;
 
     private Queue<string> notesQueue;
-
-    private bool readyBool = true;
     
     [Range(0.5f, 2f)]
-    public float musicSpeed;
+    public float musicSpeed = 1;
     
     [Range(0f, 1f)]
-    public float musicVelocity;
+    public float musicVelocity = 1;
 
     private void Start()
     {
@@ -53,8 +51,8 @@ public class MidiNotes : MonoBehaviour
             string[] noteInfo = noteString.Split(':');
             
             int noteMidiNumber = Int32.Parse(noteInfo[0]);
-            int noteOffset = (int) Math.Ceiling(1000 * float.Parse(noteInfo[1]) * musicSpeed);
-            int noteDuration = (int) Math.Ceiling(1000 * float.Parse(noteInfo[2]) * musicSpeed);
+            int noteOffset = (int) Math.Ceiling(1000 * float.Parse(noteInfo[1]) * (1 / musicSpeed));
+            int noteDuration = (int) Math.Ceiling(1000 * float.Parse(noteInfo[2]) * (1 / musicSpeed));
             int noteVelocity = (int) Math.Floor(Int32.Parse(noteInfo[3]) * musicVelocity);
             
             /*Debug.Log("noteMidiNumber " +  noteMidiNumber);
@@ -87,8 +85,6 @@ public class MidiNotes : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(Time.time);
-        
         milliSecondsSinceFirstNote = MilliSecondTimer(firstNoteStartInMilliseconds);
         milliSecondsDifferenceBetweenEndAndStart = midiStreamLastNoteEnd - firstNoteStartInMilliseconds;
 
@@ -96,16 +92,19 @@ public class MidiNotes : MonoBehaviour
         //Debug.Log("milliSecondsSinceFirstNote " + milliSecondsSinceFirstNote);
         //Debug.Log("midiStreamLastNoteEnd " + midiStreamLastNoteEnd);
         //Debug.Log("milliSecondsDifferenceBetweenEndAndStart " + milliSecondsDifferenceBetweenEndAndStart);
-        
-        if (milliSecondsSinceFirstNote > milliSecondsDifferenceBetweenEndAndStart)
+
+        if (Input.GetMouseButton(0))
         {
-            if (notesQueue.Count != 0)
+            if (milliSecondsSinceFirstNote > milliSecondsDifferenceBetweenEndAndStart)
             {
-                playIncomingNotes(notesQueue.Dequeue());
+                if (notesQueue.Count != 0)
+                {
+                    playIncomingNotes(notesQueue.Dequeue());
+                }
+                Debug.Log("Telling Python to predict");
+                pythonTest.SendToPython();
             }
-            Debug.Log("Telling Python to predict");
-            pythonTest.SendToPython();
-        }
+        } 
     }
     
 }

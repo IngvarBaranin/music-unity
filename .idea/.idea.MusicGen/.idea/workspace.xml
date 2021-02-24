@@ -1,15 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="3f8932eb-f08a-4689-9e6e-955bafe9a5ed" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Server/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MusicGen/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MusicGen/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MusicGen/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MusicGen/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MusicGen/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MusicGen/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python Scripts.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/MidiNotes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MidiNotes.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UdpSocket.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UdpSocket.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Server/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/Server/server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +41,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Parallax.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -27,6 +53,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/PythonTest.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UdpSocket.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MidiNotes.cs" />
+        <option value="$PROJECT_DIR$/Assets/CharacterController2D.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Parallax.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CharacterController2D.cs" />
       </list>
     </option>
   </component>
@@ -91,6 +121,17 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>

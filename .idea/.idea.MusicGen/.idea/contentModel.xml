@@ -214,7 +214,10 @@
           <e p="Version changes.txt" t="Include" />
         </e>
         <e p="Scripts" t="Include">
+          <e p="CharacterController2D.cs" t="Include" />
           <e p="MidiNotes.cs" t="Include" />
+          <e p="Parallax.cs" t="Include" />
+          <e p="PlayerMovement.cs" t="Include" />
           <e p="PythonTest.cs" t="Include" />
           <e p="UdpSocket.cs" t="Include" />
         </e>
