@@ -48,7 +48,7 @@ inputSongTokens = [noteToInt[i] for i in midi2text(open_midi("./testmidis/superm
 readyToSend = False
 
 print("First prediction")
-inputSongTokens, GenMidiStream = generateAndReplaceInput(model, VOCAB_SIZE, intToNote, noteToInt, toGenerate=200, inputSongTokens=inputSongTokens)
+inputSongTokens, GenMidiStream = generateAndReplaceInput(model, VOCAB_SIZE, intToNote, noteToInt, toGenerate=50, inputSongTokens=inputSongTokens)
 
 
 while True:
@@ -57,7 +57,7 @@ while True:
         sock.SendData(" ".join(GenMidiStream))
 
         print("Pre-predicting")
-        inputSongTokens, GenMidiStream = generateAndReplaceInput(model, VOCAB_SIZE, intToNote, noteToInt, toGenerate=200, inputSongTokens=inputSongTokens)
+        inputSongTokens, GenMidiStream = generateAndReplaceInput(model, VOCAB_SIZE, intToNote, noteToInt, toGenerate=50, inputSongTokens=inputSongTokens)
 
         readyToSend = False
 

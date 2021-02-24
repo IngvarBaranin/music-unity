@@ -9,13 +9,36 @@ public class MidiNotes : MonoBehaviour
     
     public MidiStreamPlayer midiStreamPlayer;
     public PythonTest pythonTest;
+    
     private long firstNoteStartInMilliseconds = 0;
     private long midiStreamLastNoteEnd = 0;
+    private long milliSecondsSinceFirstNote = 0;
+    private long milliSecondsDifferenceBetweenEndAndStart = 0;
+
+    private Queue<string> notesQueue;
 
     private bool readyBool = true;
     
-    [Range(0f, 2f)]
+    [Range(0.5f, 2f)]
     public float musicSpeed;
+    
+    [Range(0f, 1f)]
+    public float musicVelocity;
+
+    private void Start()
+    {
+        notesQueue = new Queue<string>();
+    }
+
+    public void addToQueue(string notesString)
+    {
+        notesQueue.Enqueue(notesString);
+    }
+
+    public string getDequeue()
+    {
+        return notesQueue.Dequeue();
+    }
 
     public void playIncomingNotes(string notes)
     {
@@ -32,7 +55,7 @@ public class MidiNotes : MonoBehaviour
             int noteMidiNumber = Int32.Parse(noteInfo[0]);
             int noteOffset = (int) Math.Ceiling(1000 * float.Parse(noteInfo[1]) * musicSpeed);
             int noteDuration = (int) Math.Ceiling(1000 * float.Parse(noteInfo[2]) * musicSpeed);
-            int noteVelocity = Int32.Parse(noteInfo[3]);
+            int noteVelocity = (int) Math.Floor(Int32.Parse(noteInfo[3]) * musicVelocity);
             
             /*Debug.Log("noteMidiNumber " +  noteMidiNumber);
             Debug.Log("noteOffset " +  noteOffset);
@@ -64,29 +87,24 @@ public class MidiNotes : MonoBehaviour
 
     void Update()
     {
-        long milliSecondsSinceFirstNote = MilliSecondTimer(firstNoteStartInMilliseconds);
-        long milliSecondsDifferenceBetweenEndAndStart = midiStreamLastNoteEnd - firstNoteStartInMilliseconds;
-
-        /*Debug.Log("firstNoteStartInMilliseconds " + firstNoteStartInMilliseconds);
-        Debug.Log("milliSecondsSinceFirstNote " + milliSecondsSinceFirstNote);
-        Debug.Log("midiStreamLastNoteEnd " + midiStreamLastNoteEnd);
-        Debug.Log("milliSecondsDifferenceBetweenEndAndStart " + milliSecondsDifferenceBetweenEndAndStart);*/
+        Debug.Log(Time.time);
         
-        if (milliSecondsSinceFirstNote > milliSecondsDifferenceBetweenEndAndStart - 1000)
+        milliSecondsSinceFirstNote = MilliSecondTimer(firstNoteStartInMilliseconds);
+        milliSecondsDifferenceBetweenEndAndStart = midiStreamLastNoteEnd - firstNoteStartInMilliseconds;
+
+        //Debug.Log("firstNoteStartInMilliseconds " + firstNoteStartInMilliseconds);
+        //Debug.Log("milliSecondsSinceFirstNote " + milliSecondsSinceFirstNote);
+        //Debug.Log("midiStreamLastNoteEnd " + midiStreamLastNoteEnd);
+        //Debug.Log("milliSecondsDifferenceBetweenEndAndStart " + milliSecondsDifferenceBetweenEndAndStart);
+        
+        if (milliSecondsSinceFirstNote > milliSecondsDifferenceBetweenEndAndStart)
         {
-            StartCoroutine(readyAndWait());
-        }
-    }
-    
-    IEnumerator readyAndWait()
-    {
-        if (readyBool)
-        {
-            readyBool = false;
+            if (notesQueue.Count != 0)
+            {
+                playIncomingNotes(notesQueue.Dequeue());
+            }
             Debug.Log("Telling Python to predict");
             pythonTest.SendToPython();
-            yield return new WaitForSeconds(3);
-            readyBool = true;
         }
     }
     

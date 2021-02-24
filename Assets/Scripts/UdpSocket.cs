@@ -98,8 +98,9 @@ public class UdpSocket : MonoBehaviour
                 IPEndPoint anyIP = new IPEndPoint(IPAddress.Any, 0);
                 byte[] data = client.Receive(ref anyIP);
                 string text = Encoding.UTF8.GetString(data);
-                //print(">> " + text);
-                midiNotes.playIncomingNotes(text);
+                
+                midiNotes.addToQueue(text);
+                //midiNotes.playIncomingNotes(text);
                 ProcessInput(text);
             }
             catch (Exception err)

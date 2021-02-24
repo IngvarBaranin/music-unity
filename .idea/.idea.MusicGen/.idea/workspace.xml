@@ -1,19 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3f8932eb-f08a-4689-9e6e-955bafe9a5ed" name="Default Changelist" comment="" />
+    <list default="true" id="3f8932eb-f08a-4689-9e6e-955bafe9a5ed" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Server/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MusicGen/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MusicGen/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MusicGen/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MusicGen/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MidiNotes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MidiNotes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UdpSocket.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UdpSocket.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Server/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/Server/server.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/MidiNotes.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Server.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UdpSocket.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PythonTest.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UdpSocket.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MidiNotes.cs" />
       </list>
     </option>
@@ -68,7 +80,9 @@
       <workItem from="1613576849805" duration="4107000" />
       <workItem from="1613658075015" duration="10255000" />
       <workItem from="1613742049221" duration="11220000" />
-      <workItem from="1614092256777" duration="6906000" />
+      <workItem from="1614092256777" duration="8113000" />
+      <workItem from="1614111650041" duration="3085000" />
+      <workItem from="1614163704107" duration="2301000" />
     </task>
     <servers />
   </component>
@@ -79,5 +93,11 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="936" y="333" key="run.anything.popup" timestamp="1614111748032">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="936" y="333" key="run.anything.popup/0.0.2560.1410/2560.0.1920.1050@0.0.2560.1410" timestamp="1614111748032" />
   </component>
 </project>
