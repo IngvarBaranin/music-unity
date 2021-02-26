@@ -15,6 +15,8 @@ public class MidiNotes : MonoBehaviour
     private long milliSecondsSinceFirstNote = 0;
     private long milliSecondsDifferenceBetweenEndAndStart = 0;
 
+    private int currentInstrumentIndex = 0;
+
     private Queue<string> notesQueue;
     
     [Range(0.5f, 2f)]
@@ -104,7 +106,20 @@ public class MidiNotes : MonoBehaviour
                 Debug.Log("Telling Python to predict");
                 pythonTest.SendToPython();
             }
-        } 
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Debug.Log("Changing instrument to index " + currentInstrumentIndex + 1);
+            currentInstrumentIndex += 1;
+            midiStreamPlayer.MPTK_PlayEvent(
+                new MPTKEvent()
+                {
+                    Command = MPTKCommand.PatchChange, 
+                    Value = currentInstrumentIndex, 
+                    Channel = 0
+                });
+        }
     }
     
 }
