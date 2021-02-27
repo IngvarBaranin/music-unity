@@ -8,7 +8,7 @@ public class MidiNotes : MonoBehaviour
 {
     
     public MidiStreamPlayer midiStreamPlayer;
-    public PythonTest pythonTest;
+    public PythonCommunication pythonCommunication;
     
     private long firstNoteStartInMilliseconds = 0;
     private long midiStreamLastNoteEnd = 0;
@@ -104,10 +104,11 @@ public class MidiNotes : MonoBehaviour
                     playIncomingNotes(notesQueue.Dequeue());
                 }
                 Debug.Log("Telling Python to predict");
-                pythonTest.SendToPython();
             }
         }
 
+        pythonCommunication.SendToPython("True");
+        
         if (Input.GetKeyDown(KeyCode.R))
         {
             Debug.Log("Changing instrument to index " + currentInstrumentIndex + 1);

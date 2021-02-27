@@ -36,7 +36,8 @@ public class UdpSocket : MonoBehaviour
     IPEndPoint remoteEndPoint;
     Thread receiveThread; // Receiving Thread
 
-    PythonTest pythonTest;
+    PythonCommunication pythonCommunication;
+    private Process pythonServer;
 
     public MidiNotes midiNotes;
 
@@ -56,16 +57,16 @@ public class UdpSocket : MonoBehaviour
     void Awake()
     {
         
-        /*pythonServer = new Process();
+        pythonServer = new Process();
         ProcessStartInfo startInfo = new ProcessStartInfo();
-        startInfo.FileName = "C:/WINDOWS/system32/cmd.exe";
-        startInfo.Arguments = @"/c start /min " + "python " + "\"" + Application.streamingAssetsPath + "/server.py\""; 
+        startInfo.FileName = "C:/WINDOWS/system32/cmd.exe"; 
+        startInfo.Arguments = @"/c cd " + Application.streamingAssetsPath + " && start /min python \"" + Application.streamingAssetsPath + "/server.py\""; 
         pythonServer.StartInfo = startInfo;
         pythonServer.Start();
         
         //C:/WINDOWS/system32/cmd.exe /c start /min python "C:/Users/PC/Desktop/Unity projects/MusicGen/Assets/StreamingAssets/server.py"
         
-        Debug.Log(@"/c " + "python " + "\"" + Application.streamingAssetsPath + "/server.py\"");*/
+        Debug.Log(@"/c " + "python " + "\"" + Application.streamingAssetsPath + "/server.py\"");
         
         // Create remote endpoint (to Matlab) 
         remoteEndPoint = new IPEndPoint(IPAddress.Parse(IP), txPort);
@@ -85,7 +86,7 @@ public class UdpSocket : MonoBehaviour
 
     private void Start() 
     {
-        pythonTest = FindObjectOfType<PythonTest>(); // Instead of using a public variable
+        pythonCommunication = FindObjectOfType<PythonCommunication>(); // Instead of using a public variable
     }
 
     // Receive data, update packets received
@@ -113,7 +114,7 @@ public class UdpSocket : MonoBehaviour
     private void ProcessInput(string input)
     {
         // PROCESS INPUT RECEIVED STRING HERE
-        pythonTest.UpdatePythonRcvdText(input); // Update text by string received from python
+        //pythonTest.UpdatePythonRcvdText(input); // Update text by string received from python
 
         if (!isTxStarted) // First data arrived so tx started
         {
@@ -124,13 +125,12 @@ public class UdpSocket : MonoBehaviour
     //Prevent crashes - close clients and threads properly!
     void OnDisable()
     {
+        pythonCommunication.SendToPython("Quit");
+        
         if (receiveThread != null)
             receiveThread.Abort();
 
         client.Close();
-        
-        //Debug.Log("Stopping Python server.");
-        //pythonServer.CloseMainWindow();
     }
     
     

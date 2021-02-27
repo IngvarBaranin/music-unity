@@ -768,7 +768,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   midiStreamPlayer: {fileID: 883545067}
-  pythonTest: {fileID: 881100133}
+  pythonCommunication: {fileID: 881100133}
   musicSpeed: 1
   musicVelocity: 1
 --- !u!20 &519420031
@@ -2052,7 +2052,7 @@ GameObject:
   - component: {fileID: 881100134}
   - component: {fileID: 881100133}
   m_Layer: 0
-  m_Name: Python Test
+  m_Name: PythonCommunication
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2070,7 +2070,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b35067901b18b5459f346f04e9b16a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pythonRcvdText: {fileID: 1611807871}
   sendToPythonText: {fileID: 1740657882}
 --- !u!4 &881100134
 Transform:

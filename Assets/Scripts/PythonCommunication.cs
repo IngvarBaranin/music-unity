@@ -3,33 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class PythonTest : MonoBehaviour
+public class PythonCommunication : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI pythonRcvdText = null;
     [SerializeField] TextMeshProUGUI sendToPythonText = null;
 
-    string tempStr = "Waiting for predictions";
     UdpSocket udpSocket;
 
-    public void UpdatePythonRcvdText(string str)
+    public void SendToPython(string messageToPython)
     {
-        tempStr = str;
-    }
-
-    public void SendToPython()
-    {
-        udpSocket.SendData("True");
+        udpSocket.SendData(messageToPython);
     }
 
     private void Start()
     {
         udpSocket = FindObjectOfType<UdpSocket>();
         sendToPythonText.text = "Ready for prediction";
-    }
-
-    void Update()
-    {
-        pythonRcvdText.text = tempStr;
     }
     
     public void QuitApp()

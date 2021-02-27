@@ -6,8 +6,6 @@
 # Use at your own risk
 # Use under the Apache License 2.0
 
-# Example of a Python UDP server
-
 from pred_utils import *
 import UdpComms as U
 import time
@@ -15,12 +13,7 @@ import time
 import tensorflow as tf
 import tensorflow.keras
 
-from tensorflow.keras.preprocessing import sequence
-from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.utils import to_categorical
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense, Dropout, Embedding, LSTM, Bidirectional, Input, GlobalMaxPool1D, Activation
-from tensorflow.keras.callbacks import ModelCheckpoint
 
 import json
 import numpy as np
@@ -29,7 +22,8 @@ import os
 #print("Num GPUs Available: ", len(tf.config.experimental.list_physical_devices('GPU')))
 
 
-#try:
+#os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+
 intToNote = {int(k):(v) for k,v in json.load(open("./dictionary/dictionary.json")).items()}
 noteToInt = dict(map(reversed, intToNote.items()))
 
@@ -66,9 +60,7 @@ while True:
     if data != None: # if NEW data has been received since last ReadReceivedData function call
         if (data == "True"):
             readyToSend = True
+        if (data == "Quit"):
+            quit()
 
     time.sleep(0.1)
-
-#except Exception as ex:
-#    print("Server crash", ex)
-#    input()

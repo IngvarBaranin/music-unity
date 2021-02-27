@@ -218,7 +218,7 @@
           <e p="MidiNotes.cs" t="Include" />
           <e p="Parallax.cs" t="Include" />
           <e p="PlayerMovement.cs" t="Include" />
-          <e p="PythonTest.cs" t="Include" />
+          <e p="PythonCommunication.cs" t="Include" />
           <e p="UdpSocket.cs" t="Include" />
         </e>
         <e p="TextMesh Pro" t="Include">
