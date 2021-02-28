@@ -9,6 +9,7 @@ public class MidiNotes : MonoBehaviour
     
     public MidiStreamPlayer midiStreamPlayer;
     public PythonCommunication pythonCommunication;
+    public PlayerMovement playerMovement;
     
     private long firstNoteStartInMilliseconds = 0;
     private long midiStreamLastNoteEnd = 0;
@@ -95,7 +96,7 @@ public class MidiNotes : MonoBehaviour
         //Debug.Log("midiStreamLastNoteEnd " + midiStreamLastNoteEnd);
         //Debug.Log("milliSecondsDifferenceBetweenEndAndStart " + milliSecondsDifferenceBetweenEndAndStart);
 
-        if (Input.GetMouseButton(0))
+        if (playerMovement.horizontalMove != 0 || playerMovement.jump)
         {
             if (milliSecondsSinceFirstNote > milliSecondsDifferenceBetweenEndAndStart)
             {
@@ -113,13 +114,37 @@ public class MidiNotes : MonoBehaviour
         {
             Debug.Log("Changing instrument to index " + currentInstrumentIndex + 1);
             currentInstrumentIndex += 1;
-            midiStreamPlayer.MPTK_PlayEvent(
-                new MPTKEvent()
-                {
-                    Command = MPTKCommand.PatchChange, 
-                    Value = currentInstrumentIndex, 
-                    Channel = 0
-                });
+            ChangeInstrument(currentInstrumentIndex);
+        }
+    }
+
+    public void ChangeInstrument(int instrumentIndex)
+    {
+        midiStreamPlayer.MPTK_PlayEvent(
+            new MPTKEvent()
+            {
+                Command = MPTKCommand.PatchChange, 
+                Value = instrumentIndex, 
+                Channel = 0
+            });
+    }
+
+    public void ChangeInstrumentForPlatform(string platfromName)
+    {
+        switch (platfromName)
+        {
+            case "PianoTiles":
+                ChangeInstrument(0);
+                break;
+            case "FluteTiles":
+                ChangeInstrument(10);
+                break;
+            case "StringTiles":
+                ChangeInstrument(20);
+                break;
+            default:
+                //ChangeInstrument(0);
+                break;
         }
     }
     

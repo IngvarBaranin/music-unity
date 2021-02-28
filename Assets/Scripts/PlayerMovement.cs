@@ -9,8 +9,8 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
 
     public float runSpeed = 40f;
-    private float horizontalMove = 0f;
-    private bool jump = false;
+    public float horizontalMove = 0f;
+    public bool jump = false;
 
     // Update is called once per frame
     void Update()
