@@ -21,6 +21,7 @@
       <Path>Library/PackageCache/com.unity.timeline@1.3.4</Path>
       <Path>Packages</Path>
       <Path>ProjectSettings</Path>
+      <Path>../../../Downloads/2d-extras-master</Path>
     </explicitIncludes>
     <explicitExcludes>
       <Path>.git</Path>

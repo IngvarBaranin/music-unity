@@ -40,6 +40,7 @@ public class UdpSocket : MonoBehaviour
     private Process pythonServer;
 
     public MidiNotes midiNotes;
+    public bool useServer;
 
     public void SendData(string message) // Use to send data to Python
     {
@@ -56,13 +57,16 @@ public class UdpSocket : MonoBehaviour
 
     void Awake()
     {
-        
-        pythonServer = new Process();
-        ProcessStartInfo startInfo = new ProcessStartInfo();
-        startInfo.FileName = "C:/WINDOWS/system32/cmd.exe"; 
-        startInfo.Arguments = @"/c cd " + Application.streamingAssetsPath + " && start /min python \"" + Application.streamingAssetsPath + "/server.py\""; 
-        pythonServer.StartInfo = startInfo;
-        pythonServer.Start();
+
+        if (useServer)
+        {
+            pythonServer = new Process();
+            ProcessStartInfo startInfo = new ProcessStartInfo();
+            startInfo.FileName = "C:/WINDOWS/system32/cmd.exe"; 
+            startInfo.Arguments = @"/c cd " + Application.streamingAssetsPath + " && start /min python \"" + Application.streamingAssetsPath + "/server.py\""; 
+            pythonServer.StartInfo = startInfo;
+            pythonServer.Start();
+        }
         
         //C:/WINDOWS/system32/cmd.exe /c start /min python "C:/Users/PC/Desktop/Unity projects/MusicGen/Assets/StreamingAssets/server.py"
         
