@@ -19,7 +19,7 @@ public class DeathZone : MonoBehaviour
     {
         if (other.gameObject.GetComponent<PlayerMovement>())
         {
-            other.gameObject.transform.position = new Vector3(2f, 2f);
+            other.gameObject.transform.position = new Vector3(-1f, 2f);
         }
     }
     

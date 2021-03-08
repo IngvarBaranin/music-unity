@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Tilemaps;
 
 public class CharacterController2D : MonoBehaviour
 {
@@ -14,9 +15,14 @@ public class CharacterController2D : MonoBehaviour
 	private Rigidbody2D m_Rigidbody2D;
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
+
+	private string lastTileBeneathFeet = "BlueRule";
 	
 	public Animator animator;
 	public MidiNotes midiNotes;
+	
+	public BoxCollider2D playerCollider;
+	private Vector2 colliderOriginalSize;
 
 	[Header("Events")]
 	[Space]
@@ -32,6 +38,11 @@ public class CharacterController2D : MonoBehaviour
 
 		if (OnLandEvent == null)
 			OnLandEvent = new UnityEvent();
+	}
+	
+	private void Start()
+	{
+		colliderOriginalSize = playerCollider.size;
 	}
 	
 	void OnDrawGizmosSelected()
@@ -53,18 +64,31 @@ public class CharacterController2D : MonoBehaviour
 		{
 			if (colliders[i].gameObject != gameObject)
 			{
+				Tilemap tilemapObject = colliders[i].gameObject.GetComponent<Tilemap>();
+				Vector3 groundCheckLower = new Vector3(m_GroundCheck.transform.position.x, m_GroundCheck.transform.position.y - 0.5f);
+				TileBase tileBeneathFeet = tilemapObject.GetTile(tilemapObject.WorldToCell(groundCheckLower));
+				
 				m_Grounded = true;
-				midiNotes.ChangeInstrumentForPlatform(colliders[i].name);
+				if (tileBeneathFeet != null)
+				{
+					if (tileBeneathFeet.name != lastTileBeneathFeet)
+					{
+						lastTileBeneathFeet = tileBeneathFeet.name;
+						midiNotes.ChangeInstrumentForPlatform(tileBeneathFeet.name);
+					}
+				}
 				break;
 			}
 		}
 
 		if (!m_Grounded)
 		{
+			playerCollider.size = new Vector2(colliderOriginalSize.x, colliderOriginalSize.y * 0.5f);
 			animator.SetBool("isJumping", true);
 		}
 		else
 		{
+			playerCollider.size = colliderOriginalSize;
 			animator.SetBool("isJumping", false);
 		}
 	}
@@ -99,6 +123,7 @@ public class CharacterController2D : MonoBehaviour
 		{
 			// Add a vertical force to the player.
 			m_Grounded = false;
+			m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, 0);
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
 		}
 	}

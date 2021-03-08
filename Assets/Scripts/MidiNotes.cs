@@ -29,6 +29,7 @@ public class MidiNotes : MonoBehaviour
     private void Start()
     {
         notesQueue = new Queue<string>();
+        ChangeInstrument(31);
     }
 
     public void addToQueue(string notesString)
@@ -104,18 +105,10 @@ public class MidiNotes : MonoBehaviour
                 {
                     playIncomingNotes(notesQueue.Dequeue());
                 }
-                Debug.Log("Telling Python to predict");
             }
         }
 
-        pythonCommunication.SendToPython("True");
-        
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            Debug.Log("Changing instrument to index " + currentInstrumentIndex + 1);
-            currentInstrumentIndex += 1;
-            ChangeInstrument(currentInstrumentIndex);
-        }
+        pythonCommunication.SendToPython("True"); // Telling Python to predict
     }
 
     public void ChangeInstrument(int instrumentIndex)
@@ -133,13 +126,13 @@ public class MidiNotes : MonoBehaviour
     {
         switch (platfromName)
         {
-            case "PianoTiles":
-                ChangeInstrument(0);
+            case "BlueRule":
+                ChangeInstrument(21);
                 break;
-            case "FluteTiles":
+            case "GreenRule":
                 ChangeInstrument(10);
                 break;
-            case "StringTiles":
+            case "LightBlueRule":
                 ChangeInstrument(20);
                 break;
             default:

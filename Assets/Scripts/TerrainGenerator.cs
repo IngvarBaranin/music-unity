@@ -1,31 +1,43 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using Random = UnityEngine.Random;
 
 public class TerrainGenerator : MonoBehaviour
 {
+
+    public Transform playerTransform;
+    private float playerPosX;
+    
     private int[,] mapArray;
     private Tilemap tilemap;
 
-    public TileBase tile;
+    private TileBase currentTile;
+    public TileBase TileBiome1;
+    public TileBase TileBiome2;
+    public TileBase TileBiome3;
+    
     public int terrainWidth, terrainHeight;
     
-    public int lastX, lastY = 0;
-    
-    
-    // Start is called before the first frame update
+    public int lastX = 0;
+    public int lastY = 0;
+
+
     void Start()
     {
         tilemap = GetComponent<Tilemap>();
+        currentTile = TileBiome1;
+
+        GenerateTerrain();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (playerTransform.position.x > (lastX - (terrainWidth / 2)))
         {
-            Debug.Log("Generating");
             GenerateTerrain();
         }
     }
@@ -33,7 +45,7 @@ public class TerrainGenerator : MonoBehaviour
     void GenerateTerrain()
     {
         float seed = Random.Range(.1f, 1f);
-
+        
         mapArray = GenerateArray(terrainWidth, terrainHeight, true);
         mapArray = RandomWalkTopSmoothed(mapArray, seed, 5);
         RenderMap(mapArray);
@@ -66,17 +78,52 @@ public class TerrainGenerator : MonoBehaviour
         //Clear the map (ensures we dont overlap)
         //tilemap.ClearAllTiles(); 
         //Loop through the width of the map
+
+        int currentBiomeWidth = 0;
+        int allowedBiomeWidth = 10;
+
+        Vector3Int[] positions = new Vector3Int[terrainWidth * terrainHeight];
+        TileBase[] tileArray = new TileBase[terrainWidth * terrainHeight];
+        
         for (int x = 0; x < map.GetUpperBound(0) ; x++) 
         {
+
+            if (currentBiomeWidth > allowedBiomeWidth)
+            {
+                PickRandomBiome();
+                currentBiomeWidth = 0;
+                allowedBiomeWidth = Random.Range(allowedBiomeWidth - 2, allowedBiomeWidth + 2);
+            }
+            
             //Loop through the height of the map
             for (int y = 0; y < map.GetUpperBound(1); y++) 
             {
+                positions[terrainWidth*y + x] = new Vector3Int(x + lastX, y, 0);
                 // 1 = tile, 0 = no tile
                 if (map[x, y] == 1) 
                 {
-                    tilemap.SetTile(new Vector3Int(x + lastX, y, 0), tile); 
+                    tileArray[terrainWidth*y + x] = currentTile;
                 }
             }
+            currentBiomeWidth += 1;
+        }
+        
+        tilemap.SetTiles(positions, tileArray);
+    }
+
+    public void PickRandomBiome()
+    {
+        switch (Random.Range(0, 3))
+        {
+            case 0:
+                currentTile = TileBiome1;
+                break;
+            case 1:
+                currentTile = TileBiome2;
+                break;
+            case 2:
+                currentTile = TileBiome3;
+                break;
         }
     }
     
@@ -125,7 +172,11 @@ public class TerrainGenerator : MonoBehaviour
             //Work our way from the height down to 0
             for (int y = lastHeight; y >= 0; y--)
             {
-                Debug.Log(x + " " + y);
+                if (y != lastHeight && rand.Next(0, 4) == 0)
+                {
+                    continue;
+                }
+                
                 map[x, y] = 1;
             }
             

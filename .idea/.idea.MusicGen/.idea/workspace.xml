@@ -20,158 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f8932eb-f08a-4689-9e6e-955bafe9a5ed" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MusicGen/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MusicGen/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MusicGen/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MusicGen/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MusicGen/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MusicGen/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MusicGen/riderModule.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MusicGen/riderModule.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UdpSocket.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UdpSocket.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/BlueGround.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/BlueGround.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/GreenGround.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/GreenGround.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/LightBlueGround.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/LightBlueGround.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet2_0.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet2_0.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet2_1.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet2_1.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet2_10.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet2_10.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet2_11.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet2_11.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet2_12.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet2_12.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet2_13.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet2_13.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet2_14.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet2_14.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet2_15.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet2_15.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet2_16.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet2_16.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet2_17.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet2_17.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet2_18.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet2_18.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet2_19.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet2_19.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet2_2.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet2_2.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet2_20.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet2_20.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet2_21.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet2_21.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet2_22.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet2_22.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet2_3.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet2_3.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet2_4.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet2_4.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet2_5.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet2_5.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet2_6.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet2_6.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet2_7.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet2_7.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet2_8.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet2_8.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet2_9.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet2_9.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet3_0.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet3_0.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet3_1.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet3_1.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet3_10.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet3_10.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet3_11.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet3_11.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet3_12.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet3_12.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet3_13.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet3_13.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet3_14.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet3_14.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet3_15.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet3_15.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet3_16.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet3_16.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet3_17.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet3_17.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet3_18.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet3_18.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet3_19.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet3_19.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet3_2.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet3_2.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet3_20.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet3_20.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet3_21.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet3_21.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet3_22.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet3_22.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet3_3.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet3_3.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet3_4.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet3_4.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet3_5.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet3_5.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet3_6.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet3_6.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet3_7.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet3_7.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet3_8.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet3_8.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet3_9.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet3_9.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet_0.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet_0.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet_1.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet_1.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet_10.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet_10.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet_11.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet_11.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet_12.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet_12.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet_13.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet_13.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet_14.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet_14.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet_15.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet_15.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet_16.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet_16.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet_17.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet_17.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet_18.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet_18.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet_19.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet_19.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet_2.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet_2.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet_20.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet_20.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet_21.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet_21.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet_22.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet_22.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet_3.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet_3.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet_4.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet_4.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet_5.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet_5.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet_6.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet_6.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet_7.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet_7.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet_8.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet_8.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet_9.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Tilemap/Tilesheet_9.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CharacterController2D.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CharacterController2D.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DeathZone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DeathZone.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MidiNotes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MidiNotes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TerrainGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TerrainGenerator.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,14 +48,14 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Server.cs" />
         <option value="$PROJECT_DIR$/Assets/CharacterController2D.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Parallax.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/CharacterController2D.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PythonTest.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PythonCommunication.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MidiNotes.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UdpSocket.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/DeathZone.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MidiNotes.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CharacterController2D.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TerrainGenerator.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DeathZone.cs" />
       </list>
     </option>
   </component>
@@ -260,7 +115,8 @@
       <workItem from="1614163704107" duration="2301000" />
       <workItem from="1614367815385" duration="3786000" />
       <workItem from="1614433729346" duration="5599000" />
-      <workItem from="1615138592103" duration="5856000" />
+      <workItem from="1615138592103" duration="6456000" />
+      <workItem from="1615216096774" duration="16072000" />
     </task>
     <servers />
   </component>
@@ -297,5 +153,9 @@
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="936" y="333" key="run.anything.popup/0.0.2560.1410/2560.0.1920.1050@0.0.2560.1410" timestamp="1614111748032" />
+    <state x="687" y="246" width="672" height="678" key="search.everywhere.popup" timestamp="1615218992284">
+      <screen x="0" y="0" width="2048" height="1122" />
+    </state>
+    <state x="687" y="246" width="672" height="678" key="search.everywhere.popup/0.0.2048.1122/2560.0.1920.1050@0.0.2048.1122" timestamp="1615218992284" />
   </component>
 </project>
