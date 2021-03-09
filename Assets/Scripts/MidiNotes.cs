@@ -29,7 +29,7 @@ public class MidiNotes : MonoBehaviour
     private void Start()
     {
         notesQueue = new Queue<string>();
-        ChangeInstrument(31);
+        ChangeInstrument(4);
     }
 
     public void addToQueue(string notesString)
@@ -108,7 +108,7 @@ public class MidiNotes : MonoBehaviour
     {
         float playerPosY = playerMovement.gameObject.transform.position.y;
         midiStreamPlayer.transpose = PerfectFifthTranspose(playerPosY);
-        musicSpeed = playerMovement.sprintMultiplier;
+        musicSpeed = MusicSpeedTransform(playerMovement.sprintMultiplier);
     }
 
     void FixedUpdate()
@@ -151,13 +151,13 @@ public class MidiNotes : MonoBehaviour
         switch (platfromName)
         {
             case "BlueRule":
-                ChangeInstrument(21);
+                ChangeInstrument(4);
                 break;
             case "GreenRule":
                 ChangeInstrument(10);
                 break;
             case "LightBlueRule":
-                ChangeInstrument(20);
+                ChangeInstrument(26);
                 break;
             default:
                 //ChangeInstrument(0);
