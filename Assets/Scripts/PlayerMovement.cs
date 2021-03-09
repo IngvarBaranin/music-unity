@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public bool jump = false;
 
     public float sprintModifier = 1.5f;
-    private float sprintMultiplier = 1f;
+    public float sprintMultiplier = 1f;
     
     public ParticleSystem sprintWind;
 

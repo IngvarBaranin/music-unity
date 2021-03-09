@@ -50,7 +50,7 @@ while True:
         print("Sending", len(GenMidiStream), "notes to Unity")
         sock.SendData(" ".join(GenMidiStream))
 
-        print("Pre-predicting")
+        #print("Pre-predicting")
         inputSongTokens, GenMidiStream = generateAndReplaceInput(model, VOCAB_SIZE, intToNote, noteToInt, toGenerate=50, inputSongTokens=inputSongTokens)
 
         readyToSend = False

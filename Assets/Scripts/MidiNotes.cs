@@ -48,7 +48,7 @@ public class MidiNotes : MonoBehaviour
         List<MPTKEvent> listOfEvents = new List<MPTKEvent>();
 
         string[] noteArray = notes.Split(' ');
-        Debug.Log(noteArray.Length);
+        //Debug.Log(noteArray.Length);
 
         foreach (string noteString in noteArray)
         {
@@ -86,8 +86,32 @@ public class MidiNotes : MonoBehaviour
     {
         return (DateTime.Now.Ticks / 10000) - startMilliSeconds;  //(int) Math.Ceiling(Time.time * 1000 - startMilliSeconds);
     }
+    
+    private float Remap(float value, float from1, float to1, float from2, float to2) {
+        return (value - from1) / (to1 - from1) * (to2 - from2) + from2;
+    }
 
-    void Update()
+    private int PerfectFifthTranspose(float posY)
+    {
+        if (posY > 8) return 7;
+        if (posY < 3) return -7;
+        return 0;
+    }
+
+    private float MusicSpeedTransform(float runSpeed)
+    {
+        if (runSpeed >= 1.45f) return 1.5f;
+        return 0.75f;
+    }
+
+    private void Update()
+    {
+        float playerPosY = playerMovement.gameObject.transform.position.y;
+        midiStreamPlayer.transpose = PerfectFifthTranspose(playerPosY);
+        musicSpeed = playerMovement.sprintMultiplier;
+    }
+
+    void FixedUpdate()
     {
         milliSecondsSinceFirstNote = MilliSecondTimer(firstNoteStartInMilliseconds);
         milliSecondsDifferenceBetweenEndAndStart = midiStreamLastNoteEnd - firstNoteStartInMilliseconds;

@@ -15,7 +15,9 @@ Based on older work by Sandra Fang 2016 - Unity3D to MATLAB UDP communication - 
 using UnityEngine;
 using System.Collections;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Text;
 using System.Net;
 using System.Net.Sockets;
@@ -103,8 +105,13 @@ public class UdpSocket : MonoBehaviour
                 IPEndPoint anyIP = new IPEndPoint(IPAddress.Any, 0);
                 byte[] data = client.Receive(ref anyIP);
                 string text = Encoding.UTF8.GetString(data);
-                
-                midiNotes.addToQueue(text);
+
+                List<string> noteChunks = notesToChunks(text, 5);
+                foreach (string noteChunk in noteChunks)
+                {
+                    midiNotes.addToQueue(noteChunk);
+                }
+                //midiNotes.addToQueue(text);
                 //midiNotes.playIncomingNotes(text);
                 ProcessInput(text);
             }
@@ -113,6 +120,38 @@ public class UdpSocket : MonoBehaviour
                 print(err.ToString());
             }
         }
+    }
+
+    private List<string> notesToChunks(string text, int chunkSize)
+    {
+        
+        List<string> chunks = new List<string>();
+
+        // "data:1:2:3 data:1:2:3 data:1:2:3 ..." - > [data:1:2:3, data:1:2:3, ..., data:1:2:3]
+        string[] noteArray = text.Split(' '); 
+        
+        for (int i = 0; i < (noteArray.Length / chunkSize); i++)
+        {
+            string[] chunkOfNoteData = noteArray.Skip(i*chunkSize).Take(chunkSize).ToArray(); // [note:data note:data ... note:data] (chunkSize)
+            
+            float firstNoteOffset = 0;
+            string[] tempChunk = new string[chunkSize];
+            for (int j = 0; j < chunkOfNoteData.Length; j++)
+            {
+                
+                string[] noteData = chunkOfNoteData[j].Split(':');
+                if (j == 0) firstNoteOffset = float.Parse(noteData[1]);
+
+                string newNoteOffset = (float.Parse(noteData[1]) - firstNoteOffset).ToString();
+                noteData[1] = newNoteOffset;
+                
+                tempChunk[j] = string.Join(":", noteData);
+            }
+
+            chunks.Add(string.Join(" ", tempChunk));
+        }
+        
+        return chunks;
     }
 
     private void ProcessInput(string input)

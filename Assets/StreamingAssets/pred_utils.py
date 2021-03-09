@@ -7,7 +7,12 @@ from tensorflow.keras.utils import to_categorical
 def generateAndReplaceInput(model, VOCAB_SIZE, intToNote, noteToInt, toGenerate=500, inputSongTokens=[], generateUntilEnd=False):
     generatedTokens = generateSubsequentTokens(model, VOCAB_SIZE, intToNote, toGenerate=toGenerate, startingInput=inputSongTokens, generateUntilEnd=False)
 
-    print("Replacing input for next prediction")
+    #print("Replacing input for next prediction")
+    #if (toGenerate < 50):
+    #    newInput = inputSongTokens.copy()
+    #    newInput.extend([noteToInt[i] for i in generatedTokens[-50:]])
+    #    inputSongTokens = newInput[-50:]
+    #else:
     inputSongTokens = [noteToInt[i] for i in generatedTokens[-50:]]
 
     print("Converting text to midi")

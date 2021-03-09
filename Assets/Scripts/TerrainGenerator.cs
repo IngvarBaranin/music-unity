@@ -31,7 +31,10 @@ public class TerrainGenerator : MonoBehaviour
         tilemap = GetComponent<Tilemap>();
         currentTile = TileBiome1;
 
-        GenerateTerrain();
+        for (int i = 0; i < 10; i++)
+        {
+            GenerateTerrain();
+        }
     }
 
     private void Update()

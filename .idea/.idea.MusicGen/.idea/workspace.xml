@@ -27,6 +27,9 @@
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/MidiNotes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MidiNotes.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/TerrainGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TerrainGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UdpSocket.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UdpSocket.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/pred_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/pred_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/server.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,11 +54,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/PythonTest.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PythonCommunication.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UdpSocket.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MidiNotes.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/CharacterController2D.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DeathZone.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TerrainGenerator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/DeathZone.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CharacterController2D.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MidiNotes.cs" />
       </list>
     </option>
   </component>
@@ -116,7 +119,8 @@
       <workItem from="1614367815385" duration="3786000" />
       <workItem from="1614433729346" duration="5599000" />
       <workItem from="1615138592103" duration="6456000" />
-      <workItem from="1615216096774" duration="16072000" />
+      <workItem from="1615216096774" duration="16158000" />
+      <workItem from="1615279813798" duration="12796000" />
     </task>
     <servers />
   </component>
@@ -153,9 +157,9 @@
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="936" y="333" key="run.anything.popup/0.0.2560.1410/2560.0.1920.1050@0.0.2560.1410" timestamp="1614111748032" />
-    <state x="687" y="246" width="672" height="678" key="search.everywhere.popup" timestamp="1615218992284">
+    <state x="687" y="246" width="672" height="678" key="search.everywhere.popup" timestamp="1615288667718">
       <screen x="0" y="0" width="2048" height="1122" />
     </state>
-    <state x="687" y="246" width="672" height="678" key="search.everywhere.popup/0.0.2048.1122/2560.0.1920.1050@0.0.2048.1122" timestamp="1615218992284" />
+    <state x="687" y="246" width="672" height="678" key="search.everywhere.popup/0.0.2048.1122/2560.0.1920.1050@0.0.2048.1122" timestamp="1615288667718" />
   </component>
 </project>

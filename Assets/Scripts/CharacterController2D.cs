@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Tilemaps;
 
@@ -20,24 +21,15 @@ public class CharacterController2D : MonoBehaviour
 	
 	public Animator animator;
 	public MidiNotes midiNotes;
+	public ParticleSystem walkingParticles;
+	private Vector2 walkingParticleThreshold = new Vector2(0.1f, 0.1f);
 	
 	public BoxCollider2D playerCollider;
 	private Vector2 colliderOriginalSize;
 
-	[Header("Events")]
-	[Space]
-
-	public UnityEvent OnLandEvent;
-
-	[System.Serializable]
-	public class BoolEvent : UnityEvent<bool> { }
-
 	private void Awake()
 	{
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
-
-		if (OnLandEvent == null)
-			OnLandEvent = new UnityEvent();
 	}
 	
 	private void Start()
@@ -125,6 +117,18 @@ public class CharacterController2D : MonoBehaviour
 			m_Grounded = false;
 			m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, 0);
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+		}
+	}
+
+	private void Update()
+	{
+		if (m_Rigidbody2D.velocity.magnitude > walkingParticleThreshold.magnitude && !walkingParticles.isPlaying)
+		{
+			walkingParticles.Play();
+		} 
+		if (m_Rigidbody2D.velocity.magnitude < walkingParticleThreshold.magnitude && walkingParticles.isPlaying)
+		{
+			walkingParticles.Stop(true, ParticleSystemStopBehavior.StopEmitting);
 		}
 	}
 

@@ -9,6 +9,7 @@ public class DeathZone : MonoBehaviour
 
     public GameObject player;
     public float DeathZoneYPos = -5;
+    public Transform RespawnLocation;
 
     private void Update()
     {
@@ -19,7 +20,7 @@ public class DeathZone : MonoBehaviour
     {
         if (other.gameObject.GetComponent<PlayerMovement>())
         {
-            other.gameObject.transform.position = new Vector3(-1f, 2f);
+            other.gameObject.transform.position = RespawnLocation.position;
         }
     }
     
