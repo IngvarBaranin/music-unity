@@ -10,6 +10,7 @@ public class TerrainGenerator : MonoBehaviour
 {
 
     public Transform playerTransform;
+    public Transform cameraTransform;
     private float playerPosX;
     
     private int[,] mapArray;
@@ -39,7 +40,7 @@ public class TerrainGenerator : MonoBehaviour
 
     private void Update()
     {
-        if (playerTransform.position.x > (lastX - (terrainWidth / 2)))
+        if (cameraTransform.position.x > (lastX - (terrainWidth / 2)))
         {
             GenerateTerrain();
         }

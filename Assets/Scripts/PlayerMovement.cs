@@ -25,8 +25,6 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 windOriginalPos = sprintWind.gameObject.transform.position;
-        sprintWind.gameObject.transform.position = new Vector3(gameObject.transform.position.x + 10, windOriginalPos.y, 0);
         var sprintWindMain = sprintWind.main;
         
         if (Input.GetKey(KeyCode.LeftShift))
@@ -50,9 +48,17 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void OnBecameInvisible()
+    {
+        DeathZone.Instance.Restart();
+    }
+
     private void FixedUpdate()
     {
-        controller.Move(horizontalMove * Time.fixedDeltaTime, jump);
-        jump = false;
+        if (Countdown.Instance.gameStarted)
+        {
+            controller.Move(horizontalMove * Time.fixedDeltaTime, jump);
+            jump = false;
+        }
     }
 }

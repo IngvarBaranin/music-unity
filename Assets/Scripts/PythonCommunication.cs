@@ -5,8 +5,6 @@ using TMPro;
 
 public class PythonCommunication : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI sendToPythonText = null;
-
     UdpSocket udpSocket;
 
     public void SendToPython(string messageToPython)
@@ -17,12 +15,5 @@ public class PythonCommunication : MonoBehaviour
     private void Start()
     {
         udpSocket = FindObjectOfType<UdpSocket>();
-        sendToPythonText.text = "Ready for prediction";
-    }
-    
-    public void QuitApp()
-    {
-        print("Quitting");
-        Application.Quit();
     }
 }

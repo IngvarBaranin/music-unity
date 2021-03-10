@@ -519,6 +519,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbcf0f1d71617b84e953867f924ed228, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bestScoreText: {fileID: 0}
+  currentScoreText: {fileID: 0}
+  playerMovement: {fileID: 0}
+  isInGame: 0
 --- !u!1 &496374065
 GameObject:
   m_ObjectHideFlags: 0

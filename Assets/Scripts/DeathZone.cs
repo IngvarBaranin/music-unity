@@ -7,9 +7,18 @@ using UnityEngine.SceneManagement;
 public class DeathZone : MonoBehaviour
 {
 
+    public static DeathZone Instance;
+    
     public GameObject player;
     public float DeathZoneYPos = -5;
     public Transform RespawnLocation;
+
+    public CameraMovement mainCameraMovement;
+
+    private void Start()
+    {
+        Instance = this;
+    }
 
     private void Update()
     {
@@ -20,8 +29,13 @@ public class DeathZone : MonoBehaviour
     {
         if (other.gameObject.GetComponent<PlayerMovement>())
         {
-            other.gameObject.transform.position = RespawnLocation.position;
+            Restart();
         }
     }
-    
+
+    public void Restart()
+    {
+        player.gameObject.transform.position = RespawnLocation.position;
+        mainCameraMovement.ResetCameraSmooth();
+    }
 }

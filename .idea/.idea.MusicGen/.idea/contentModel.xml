@@ -214,7 +214,9 @@
           <e p="Version changes.txt" t="Include" />
         </e>
         <e p="Scripts" t="Include">
+          <e p="CameraMovement.cs" t="Include" />
           <e p="CharacterController2D.cs" t="Include" />
+          <e p="Countdown.cs" t="Include" />
           <e p="DeathZone.cs" t="Include" />
           <e p="LevelLoader.cs" t="Include" />
           <e p="MidiNotes.cs" t="Include" />

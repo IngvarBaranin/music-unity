@@ -68,11 +68,10 @@ public class UdpSocket : MonoBehaviour
             startInfo.Arguments = @"/c cd " + Application.streamingAssetsPath + " && start /min python \"" + Application.streamingAssetsPath + "/server.py\""; 
             pythonServer.StartInfo = startInfo;
             pythonServer.Start();
+            Thread.Sleep(7000); // Wait for server to be ready
         }
-        
+
         //C:/WINDOWS/system32/cmd.exe /c start /min python "C:/Users/PC/Desktop/Unity projects/MusicGen/Assets/StreamingAssets/server.py"
-        
-        Debug.Log(@"/c " + "python " + "\"" + Application.streamingAssetsPath + "/server.py\"");
         
         // Create remote endpoint (to Matlab) 
         remoteEndPoint = new IPEndPoint(IPAddress.Parse(IP), txPort);
