@@ -216,12 +216,14 @@
         <e p="Scripts" t="Include">
           <e p="CharacterController2D.cs" t="Include" />
           <e p="DeathZone.cs" t="Include" />
+          <e p="LevelLoader.cs" t="Include" />
           <e p="MidiNotes.cs" t="Include" />
           <e p="Parallax.cs" t="Include" />
           <e p="PlayerMovement.cs" t="Include" />
           <e p="PythonCommunication.cs" t="Include" />
           <e p="TerrainGenerator.cs" t="Include" />
           <e p="UdpSocket.cs" t="Include" />
+          <e p="UIButtons.cs" t="Include" />
         </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Fonts" t="Include">

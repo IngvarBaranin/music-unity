@@ -37,9 +37,9 @@ public class MidiNotes : MonoBehaviour
         notesQueue.Enqueue(notesString);
     }
 
-    public string getDequeue()
+    public bool isQueueEmpty()
     {
-        return notesQueue.Dequeue();
+        return notesQueue.Count == 0;
     }
 
     public void playIncomingNotes(string notes)
