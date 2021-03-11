@@ -68,7 +68,7 @@ public class UdpSocket : MonoBehaviour
             startInfo.Arguments = @"/c cd " + Application.streamingAssetsPath + " && start /min python \"" + Application.streamingAssetsPath + "/server.py\""; 
             pythonServer.StartInfo = startInfo;
             pythonServer.Start();
-            Thread.Sleep(7000); // Wait for server to be ready
+            Thread.Sleep(3000); // Wait for server to be ready
         }
 
         //C:/WINDOWS/system32/cmd.exe /c start /min python "C:/Users/PC/Desktop/Unity projects/MusicGen/Assets/StreamingAssets/server.py"
