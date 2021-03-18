@@ -46,7 +46,7 @@ try:
 
 
     print("Creating starting input")
-    inputSongTokens = np.random.randint(0, 300, size=50).tolist()
+    inputSongTokens = np.random.randint(1, 300, size=50).tolist()
     readyToSend = False
     height = None
 
