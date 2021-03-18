@@ -29,7 +29,6 @@ try:
     config = tf.compat.v1.ConfigProto()
     config.gpu_options.allow_growth = True  # dynamically grow the memory used on the GPU
     config.log_device_placement = True  # to log device placement (on which device the operation ran)
-    # (nothing gets printed in Jupyter, only if you run it standalone)
     sess = tf.compat.v1.Session(config=config)
     set_session(sess)  # set this TensorFlow session as the default session for Keras
 
@@ -49,6 +48,7 @@ try:
     print("Creating starting input")
     inputSongTokens = [noteToInt[i] for i in midi2text(open_midi("./testmidis/supermario.mid"))][:50]
     readyToSend = False
+    height = None
 
     print("First prediction")
     inputSongTokens, GenMidiStream = generateAndReplaceInput(model, VOCAB_SIZE, intToNote, noteToInt, toGenerate=50, inputSongTokens=inputSongTokens)
@@ -60,19 +60,24 @@ try:
             sock.SendData(" ".join(GenMidiStream))
 
             #print("Pre-predicting")
-            inputSongTokens, GenMidiStream = generateAndReplaceInput(model, VOCAB_SIZE, intToNote, noteToInt, toGenerate=50, inputSongTokens=inputSongTokens)
+            inputSongTokens, GenMidiStream = generateAndReplaceInput(model, VOCAB_SIZE, intToNote, noteToInt, toGenerate=50, inputSongTokens=inputSongTokens, height=height)
 
             readyToSend = False
 
         data = sock.ReadReceivedData() # read data
 
         if data != None: # if NEW data has been received since last ReadReceivedData function call
-            if (data == "True"):
+            dataSplit = data.split(":", 1)
+            print(dataSplit)
+            if (dataSplit[0] == "True"):
                 readyToSend = True
-            if (data == "Quit"):
+                height = int(dataSplit[1])
+                print(height)
+            if (dataSplit[0] == "Quit"):
                 quit()
 
         time.sleep(0.1)
 except Exception as e:
+    print("exception")
     print(e)
     input()

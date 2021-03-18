@@ -11952,6 +11952,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b35067901b18b5459f346f04e9b16a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerPosition: {fileID: 629219171}
+  midiNotes: {fileID: 519420030}
 --- !u!4 &881100134
 Transform:
   m_ObjectHideFlags: 0

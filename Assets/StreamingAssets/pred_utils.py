@@ -4,8 +4,8 @@ import numpy as np
 from tensorflow.keras.utils import to_categorical
 
 
-def generateAndReplaceInput(model, VOCAB_SIZE, intToNote, noteToInt, toGenerate=500, inputSongTokens=[], generateUntilEnd=False):
-    generatedTokens = generateSubsequentTokens(model, VOCAB_SIZE, intToNote, toGenerate=toGenerate, startingInput=inputSongTokens, generateUntilEnd=False)
+def generateAndReplaceInput(model, VOCAB_SIZE, intToNote, noteToInt, toGenerate=500, inputSongTokens=[], generateUntilEnd=False, height=1):
+    generatedTokens = generateSubsequentTokens(model, VOCAB_SIZE, intToNote, noteToInt, toGenerate=toGenerate, startingInput=inputSongTokens, generateUntilEnd=False, height=height)
 
     #print("Replacing input for next prediction")
     #if (toGenerate < 50):
@@ -22,7 +22,7 @@ def generateAndReplaceInput(model, VOCAB_SIZE, intToNote, noteToInt, toGenerate=
 
     return inputSongTokens, genmidistream
 
-def generateSubsequentTokens(model, VOCAB_SIZE, intToNote, toGenerate=500, startingInput=[], generateUntilEnd=False):
+def generateSubsequentTokens(model, VOCAB_SIZE, intToNote, noteToInt, toGenerate=500, startingInput=[], generateUntilEnd=False, height=1):
     # Range determines the number of tokens to predict
 
     keepGenerating = True
@@ -37,19 +37,35 @@ def generateSubsequentTokens(model, VOCAB_SIZE, intToNote, toGenerate=500, start
 
         # Predict next token depending on the previous 50 tokens
         prediction = model(prediction_input)
-        index = np.argmax(prediction)
 
+        # By default, despite player height
+        idx = np.argmax(prediction)
         # Check if previous tokens were "varied" enough, if not, choose a random prediction from the top 3 predictions
-        if (len(np.unique(slidingSequence)) < 15):
-           ind = np.argpartition(prediction[0], -2)[-2:]
-           index = np.random.choice(ind)
+        if len(np.unique(slidingSequence)) < 15:
+            ind = np.argpartition(prediction[0], -2)[-2:]
+            idx = np.random.choice(ind)
 
-        result = intToNote[index]
+        if (height != 1 and intToNote[idx].startswith("note") and not intToNote[idx].endswith("off")):
+            bestIndexes = np.argpartition(prediction[0], -10)[-10:]
+            bestEvents = [intToNote[index] for index in bestIndexes]
+
+            results = [event for event in bestEvents if event.startswith("note") and not event.endswith("off")]
+            bestIndexes = [x for x in bestIndexes if intToNote[x] in results]
+
+            results = [event.split(':', 1)[-1] for event in results] # Get the note names
+            results = [noteToMidiNr(result) for result in results] # Convert them to MIDI numbers
+            if height == 0:
+                idx = bestIndexes[results.index(min(results))] # Get the lowest note number
+            else:
+                idx = bestIndexes[results.index(max(results))] # Get the highest note number
+            print("GOT HERE: " + intToNote[idx])
+
+        result = intToNote[idx]
 
         predictionOutput.append(result)
         tokensGenerated += 1
 
-        slidingSequence = np.append(slidingSequence, index)
+        slidingSequence = np.append(slidingSequence, idx)
         slidingSequence = [slidingSequence[1:len(slidingSequence)]]
 
         if (generateUntilEnd and result == "end") or (not generateUntilEnd and tokensGenerated == toGenerate):
@@ -61,6 +77,13 @@ def open_midi(midi_path):
     mf = converter.parse(midi_path)
     return mf
 
+def noteToMidiNr(note):
+    notes = ['c', 'c#', 'd', 'e-', 'e', 'f', 'f#', 'g', 'g#', 'a', 'b-', 'b']
+    #print("note to convert: " + note)
+    noteOctave = int(note[-1])
+    noteName = note[:-1]
+
+    return noteOctave * notes.index(noteName)
 
 # Restricts possible velocities to 8 values, keeping the number of unique note events smaller
 # Resembles ppp, pp, p, mp, mf, f, ff, fff dynamics

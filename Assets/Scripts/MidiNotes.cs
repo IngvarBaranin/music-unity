@@ -42,6 +42,11 @@ public class MidiNotes : MonoBehaviour
         return notesQueue.Count == 0;
     }
 
+    public void clearQueue()
+    {
+        notesQueue.Clear();
+    }
+
     public void playIncomingNotes(string notes)
     {
 
@@ -106,9 +111,11 @@ public class MidiNotes : MonoBehaviour
 
     private void Update()
     {
-        float playerPosY = playerMovement.gameObject.transform.position.y;
-        midiStreamPlayer.transpose = PerfectFifthTranspose(playerPosY);
+        //float playerPosY = playerMovement.gameObject.transform.position.y;
+        //midiStreamPlayer.transpose = PerfectFifthTranspose(playerPosY);
         musicSpeed = MusicSpeedTransform(playerMovement.sprintMultiplier);
+        
+        Debug.Log(notesQueue.Count);
     }
 
     void FixedUpdate()
