@@ -5181,6 +5181,8 @@ MonoBehaviour:
   bestScoreText: {fileID: 1611807871}
   currentScoreText: {fileID: 1043707700}
   playerMovement: {fileID: 629219176}
+  VolumeToggle: {fileID: 0}
+  ReactiveToggle: {fileID: 0}
   isInGame: 1
 --- !u!114 &173043882
 MonoBehaviour:
@@ -5619,6 +5621,8 @@ MonoBehaviour:
   playerMovement: {fileID: 629219176}
   musicSpeed: 0.75
   musicVelocity: 1
+  isMusicEnabled: 1
+  isMusicReactive: 1
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -7110,7 +7114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9d135a461b2e8c429b854dddfec67fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  XMoveSpeed: 8
+  XMoveSpeed: 6
 --- !u!1 &875229872
 GameObject:
   m_ObjectHideFlags: 0

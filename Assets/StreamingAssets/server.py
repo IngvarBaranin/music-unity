@@ -46,7 +46,7 @@ try:
 
 
     print("Creating starting input")
-    inputSongTokens = [noteToInt[i] for i in midi2text(open_midi("./testmidis/supermario.mid"))][:50]
+    inputSongTokens = np.random.randint(0, 300, size=50).tolist()
     readyToSend = False
     height = None
 
@@ -78,6 +78,5 @@ try:
 
         time.sleep(0.1)
 except Exception as e:
-    print("exception")
     print(e)
-    input()
+    #input()

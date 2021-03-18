@@ -17,6 +17,7 @@ public class MidiNotes : MonoBehaviour
     private long milliSecondsDifferenceBetweenEndAndStart = 0;
 
     private int currentInstrumentIndex = 0;
+    private bool firstPass = true;
 
     private Queue<string> notesQueue;
     
@@ -26,10 +27,16 @@ public class MidiNotes : MonoBehaviour
     [Range(0f, 1f)]
     public float musicVelocity = 1;
 
+
+    public bool isMusicEnabled = true;
+    public bool isMusicReactive = true;
+
     private void Start()
     {
+        isMusicEnabled = PlayerPrefs.GetInt("Volume", 1) == 1;
+        isMusicReactive = PlayerPrefs.GetInt("Reactive", 1) == 1;
+        
         notesQueue = new Queue<string>();
-        ChangeInstrument(4);
     }
 
     public void addToQueue(string notesString)
@@ -84,23 +91,19 @@ public class MidiNotes : MonoBehaviour
         }
 
         firstNoteStartInMilliseconds = DateTime.Now.Ticks / 10000; // First note starts now 
+
+        if (firstPass)
+        {
+            ChangeInstrument(4);
+            firstPass = false;
+        }
+        
         midiStreamPlayer.MPTK_PlayEvent(listOfEvents);
     }
 
     long MilliSecondTimer(long startMilliSeconds)
     {
         return (DateTime.Now.Ticks / 10000) - startMilliSeconds;  //(int) Math.Ceiling(Time.time * 1000 - startMilliSeconds);
-    }
-    
-    private float Remap(float value, float from1, float to1, float from2, float to2) {
-        return (value - from1) / (to1 - from1) * (to2 - from2) + from2;
-    }
-
-    private int PerfectFifthTranspose(float posY)
-    {
-        if (posY > 8) return 7;
-        if (posY < 3) return -7;
-        return 0;
     }
 
     private float MusicSpeedTransform(float runSpeed)
@@ -111,9 +114,10 @@ public class MidiNotes : MonoBehaviour
 
     private void Update()
     {
-        //float playerPosY = playerMovement.gameObject.transform.position.y;
-        //midiStreamPlayer.transpose = PerfectFifthTranspose(playerPosY);
-        musicSpeed = MusicSpeedTransform(playerMovement.sprintMultiplier);
+        if (isMusicEnabled && isMusicReactive)
+        {
+            musicSpeed = MusicSpeedTransform(playerMovement.sprintMultiplier);
+        }
         
         Debug.Log(notesQueue.Count);
     }
@@ -128,14 +132,12 @@ public class MidiNotes : MonoBehaviour
         //Debug.Log("midiStreamLastNoteEnd " + midiStreamLastNoteEnd);
         //Debug.Log("milliSecondsDifferenceBetweenEndAndStart " + milliSecondsDifferenceBetweenEndAndStart);
 
-        if (playerMovement.horizontalMove != 0 || playerMovement.jump)
+        if (((playerMovement.horizontalMove != 0 || playerMovement.jump) && isMusicReactive && isMusicEnabled) ||
+            (!isMusicReactive && isMusicEnabled))
         {
-            if (milliSecondsSinceFirstNote > milliSecondsDifferenceBetweenEndAndStart)
+            if (milliSecondsSinceFirstNote > milliSecondsDifferenceBetweenEndAndStart && notesQueue.Count != 0)
             {
-                if (notesQueue.Count != 0)
-                {
-                    playIncomingNotes(notesQueue.Dequeue());
-                }
+                playIncomingNotes(notesQueue.Dequeue());
             }
         }
 

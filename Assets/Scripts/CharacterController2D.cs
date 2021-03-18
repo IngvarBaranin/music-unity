@@ -66,7 +66,10 @@ public class CharacterController2D : MonoBehaviour
 					if (tileBeneathFeet.name != lastTileBeneathFeet)
 					{
 						lastTileBeneathFeet = tileBeneathFeet.name;
-						midiNotes.ChangeInstrumentForPlatform(tileBeneathFeet.name);
+						if (midiNotes.isMusicEnabled && midiNotes.isMusicReactive)
+						{
+							midiNotes.ChangeInstrumentForPlatform(tileBeneathFeet.name);
+						}
 					}
 				}
 				break;

@@ -46,7 +46,7 @@ def generateSubsequentTokens(model, VOCAB_SIZE, intToNote, noteToInt, toGenerate
             idx = np.random.choice(ind)
 
         if (height != 1 and intToNote[idx].startswith("note") and not intToNote[idx].endswith("off")):
-            bestIndexes = np.argpartition(prediction[0], -10)[-10:]
+            bestIndexes = np.argpartition(prediction[0], -3)[-3:]
             bestEvents = [intToNote[index] for index in bestIndexes]
 
             results = [event for event in bestEvents if event.startswith("note") and not event.endswith("off")]
@@ -58,7 +58,6 @@ def generateSubsequentTokens(model, VOCAB_SIZE, intToNote, noteToInt, toGenerate
                 idx = bestIndexes[results.index(min(results))] # Get the lowest note number
             else:
                 idx = bestIndexes[results.index(max(results))] # Get the highest note number
-            print("GOT HERE: " + intToNote[idx])
 
         result = intToNote[idx]
 

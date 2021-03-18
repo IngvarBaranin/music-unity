@@ -15,10 +15,10 @@ public class PythonCommunication : MonoBehaviour
     {
         string previousHeight = predictionHeight;
         
-        if (posY > 8)
+        if (posY > 8 && midiNotes.isMusicReactive)
         {
             predictionHeight = "2";
-        } else if (posY < 4)
+        } else if (posY < 4 && midiNotes.isMusicReactive)
         {
             predictionHeight = "0";
         }
