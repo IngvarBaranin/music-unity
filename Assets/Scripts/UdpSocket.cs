@@ -164,7 +164,7 @@ public class UdpSocket : MonoBehaviour
     }
     
     //Prevent crashes - close clients and threads properly!
-    void OnDisable()
+    void OnDestroy()
     {
         pythonCommunication.SendToPython("Quit");
         

@@ -37,6 +37,12 @@ public class PythonCommunication : MonoBehaviour
 
     public void SendToPython(string messageToPython)
     {
+        if (messageToPython == "Quit")
+        {
+            udpSocket.SendData(messageToPython + ":0");
+            return;
+        }
+        
         udpSocket.SendData(messageToPython + ":" + PredictHigherOrLower(playerPosition.transform.position.y));
     }
 

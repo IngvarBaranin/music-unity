@@ -25,58 +25,58 @@ import os
 
 #os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
-try:
-    config = tf.compat.v1.ConfigProto()
-    config.gpu_options.allow_growth = True  # dynamically grow the memory used on the GPU
-    config.log_device_placement = True  # to log device placement (on which device the operation ran)
-    sess = tf.compat.v1.Session(config=config)
-    set_session(sess)  # set this TensorFlow session as the default session for Keras
+#try:
+config = tf.compat.v1.ConfigProto()
+config.gpu_options.allow_growth = True  # dynamically grow the memory used on the GPU
+config.log_device_placement = True  # to log device placement (on which device the operation ran)
+sess = tf.compat.v1.Session(config=config)
+set_session(sess)  # set this TensorFlow session as the default session for Keras
 
-    intToNote = {int(k):(v) for k,v in json.load(open("./dictionary/dictionary.json")).items()}
-    noteToInt = dict(map(reversed, intToNote.items()))
+intToNote = {int(k):(v) for k,v in json.load(open("./dictionary/dictionary.json")).items()}
+noteToInt = dict(map(reversed, intToNote.items()))
 
-    VOCAB_SIZE = len(intToNote)
-    print("Instantiating model")
-    model = tf.keras.models.load_model("./trained_models/LSTM256-generator2.h5")
+VOCAB_SIZE = len(intToNote)
+print("Instantiating model")
+model = tf.keras.models.load_model("./trained_models/LSTM256-generator2.h5")
 
-    print("Listening")
-    sock = U.UdpComms(udpIP="127.0.0.1", portTX=8000, portRX=8001, enableRX=True, suppressWarnings=True)
-
-
+print("Listening")
+sock = U.UdpComms(udpIP="127.0.0.1", portTX=8000, portRX=8001, enableRX=True, suppressWarnings=True)
 
 
-    print("Creating starting input")
-    inputSongTokens = np.random.randint(1, 300, size=50).tolist()
-    readyToSend = False
-    height = None
-
-    print("First prediction")
-    inputSongTokens, GenMidiStream = generateAndReplaceInput(model, VOCAB_SIZE, intToNote, noteToInt, toGenerate=50, inputSongTokens=inputSongTokens)
 
 
-    while True:
-        if readyToSend:
-            print("Sending", len(GenMidiStream), "notes to Unity")
-            sock.SendData(" ".join(GenMidiStream))
+print("Creating starting input")
+inputSongTokens = np.random.randint(1, 300, size=50).tolist()
+readyToSend = False
+height = None
 
-            #print("Pre-predicting")
-            inputSongTokens, GenMidiStream = generateAndReplaceInput(model, VOCAB_SIZE, intToNote, noteToInt, toGenerate=50, inputSongTokens=inputSongTokens, height=height)
+print("First prediction")
+inputSongTokens, GenMidiStream = generateAndReplaceInput(model, VOCAB_SIZE, intToNote, noteToInt, toGenerate=50, inputSongTokens=inputSongTokens)
 
-            readyToSend = False
 
-        data = sock.ReadReceivedData() # read data
+while True:
+    if readyToSend:
+        print("Sending", len(GenMidiStream), "notes to Unity")
+        sock.SendData(" ".join(GenMidiStream))
 
-        if data != None: # if NEW data has been received since last ReadReceivedData function call
-            dataSplit = data.split(":", 1)
-            print(dataSplit)
-            if (dataSplit[0] == "True"):
-                readyToSend = True
-                height = int(dataSplit[1])
-                print(height)
-            if (dataSplit[0] == "Quit"):
-                quit()
+        #print("Pre-predicting")
+        inputSongTokens, GenMidiStream = generateAndReplaceInput(model, VOCAB_SIZE, intToNote, noteToInt, toGenerate=50, inputSongTokens=inputSongTokens, height=height)
 
-        time.sleep(0.1)
-except Exception as e:
-    print(e)
-    #input()
+        readyToSend = False
+
+    data = sock.ReadReceivedData() # read data
+
+    if data != None: # if NEW data has been received since last ReadReceivedData function call
+        dataSplit = data.split(":", 1)
+        print(dataSplit)
+        if (dataSplit[0] == "True"):
+            readyToSend = True
+            height = int(dataSplit[1])
+            print(height)
+        if (dataSplit[0] == "Quit"):
+            quit()
+
+    time.sleep(0.1)
+#except Exception as e:
+#    print(e)
+#    #input()
