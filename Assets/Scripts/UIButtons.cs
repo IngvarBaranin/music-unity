@@ -14,18 +14,30 @@ public class UIButtons : MonoBehaviour
     public TextMeshProUGUI bestScoreText;
     public TextMeshProUGUI currentScoreText;
     public PlayerMovement playerMovement;
-    public Toggle VolumeToggle;
-    public Toggle ReactiveToggle;
 
+    public TMP_Dropdown TMPDropdown;
+    string[] playerPrefNames = {"Reactive", "Static", "NoMusic"};
+    
     public bool isInGame = true;
 
     private void Start()
     {
         Instance = this;
-        
-        SetMusicVolumeToggle();
-        SetReactiveMusicToggle();
 
+        if (!isInGame)
+        {
+            for (int i = 0; i < playerPrefNames.Length; i++)
+            {
+                PlayerPrefs.SetInt(playerPrefNames[i], 0);
+            }
+
+            PlayerPrefs.SetInt("Reactive", 1);
+            
+            TMPDropdown.onValueChanged.AddListener(delegate {
+                HandlePlayerPref(TMPDropdown);
+            });
+        }
+        
         if (isInGame)
         {
             currentScoreText.text = "0";
@@ -65,18 +77,21 @@ public class UIButtons : MonoBehaviour
         }
     }
 
-    public void SetMusicVolumeToggle()
+    public void HandlePlayerPref(TMP_Dropdown tmpDropdown)
     {
-        Debug.Log("Setting Volume to " + (VolumeToggle.isOn ? 1 : 0));
-        PlayerPrefs.SetInt("Volume", VolumeToggle.isOn ? 1 : 0);
+        int valIdx = tmpDropdown.value;
 
-        ReactiveToggle.interactable = VolumeToggle.isOn;
-    }
+        for (int i = 0; i < 3; i++)
+        {
+            if (valIdx == i) PlayerPrefs.SetInt(playerPrefNames[i], 1);
+            else PlayerPrefs.SetInt(playerPrefNames[i], 0);
+        }
 
-    public void SetReactiveMusicToggle()
-    {
-        Debug.Log("Setting Reactive to " + (ReactiveToggle.isOn ? 1 : 0));
-        PlayerPrefs.SetInt("Reactive", ReactiveToggle.isOn ? 1 : 0);
+        for (int i = 0; i < 3; i++)
+        {
+            Debug.Log(PlayerPrefs.GetInt(playerPrefNames[i]));
+        }
+        
     }
     
 }

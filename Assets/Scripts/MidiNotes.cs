@@ -33,7 +33,7 @@ public class MidiNotes : MonoBehaviour
 
     private void Start()
     {
-        isMusicEnabled = PlayerPrefs.GetInt("Volume", 1) == 1;
+        isMusicEnabled = PlayerPrefs.GetInt("NoMusic", 1) == 0;
         isMusicReactive = PlayerPrefs.GetInt("Reactive", 1) == 1;
         
         notesQueue = new Queue<string>();

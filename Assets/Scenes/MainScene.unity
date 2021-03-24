@@ -5181,8 +5181,7 @@ MonoBehaviour:
   bestScoreText: {fileID: 1611807871}
   currentScoreText: {fileID: 1043707700}
   playerMovement: {fileID: 629219176}
-  VolumeToggle: {fileID: 0}
-  ReactiveToggle: {fileID: 0}
+  TMPDropdown: {fileID: 0}
   isInGame: 1
 --- !u!114 &173043882
 MonoBehaviour:
@@ -12988,7 +12987,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 851866940983893266, guid: e1a0dfd0e9000994a948db37b315c37c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 851866940983893268, guid: e1a0dfd0e9000994a948db37b315c37c, type: 3}
       propertyPath: m_LocalPosition.x
