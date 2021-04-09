@@ -1,10 +1,4 @@
-# Created by Youssef Elashry to allow two-way communication between Python3 and Unity to send and receive strings
-
-# Feel free to use this in your individual or commercial projects BUT make sure to reference me as: Two-way communication between Python 3 and Unity (C#) - Y. T. Elashry
-# It would be appreciated if you send me how you have used this in your projects (e.g. Machine Learning) at youssef.elashry@gmail.com
-
-# Use at your own risk
-# Use under the Apache License 2.0
+# UDP Connection parts created by Youssef Elashry to allow two-way communication between Python3 and Unity to send and receive strings
 
 from pred_utils import *
 import UdpComms as U
@@ -25,7 +19,6 @@ import os
 
 #os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
-#try:
 config = tf.compat.v1.ConfigProto()
 config.gpu_options.allow_growth = True  # dynamically grow the memory used on the GPU
 config.log_device_placement = True  # to log device placement (on which device the operation ran)
@@ -67,6 +60,7 @@ while True:
     data = sock.ReadReceivedData() # read data
 
     if data != None: # if NEW data has been received since last ReadReceivedData function call
+        timeoutCounter = 10
         dataSplit = data.split(":", 1)
         print(dataSplit)
         if (dataSplit[0] == "True"):
@@ -77,6 +71,3 @@ while True:
             quit()
 
     time.sleep(0.1)
-#except Exception as e:
-#    print(e)
-#    #input()

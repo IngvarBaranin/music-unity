@@ -35,7 +35,10 @@ public class DeathZone : MonoBehaviour
 
     public void Restart()
     {
-        player.gameObject.transform.position = RespawnLocation.position;
-        mainCameraMovement.ResetCameraSmooth();
+        if (player != null && RespawnLocation != null && mainCameraMovement != null)
+        {
+            player.gameObject.transform.position = RespawnLocation.position;
+            mainCameraMovement.ResetCameraSmooth();
+        }
     }
 }
